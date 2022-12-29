@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 @SuppressWarnings("serial")
 public class TelaDeLoginView extends Controller.TelaController{
@@ -14,9 +15,27 @@ public class TelaDeLoginView extends Controller.TelaController{
 	 */
 	public TelaDeLoginView() {
 		setTitle("Login");
+//		BOTÃO ENTRAR
 		entrarButton = new JButton("Entrar");
+		entrarButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Entrou");
+				
+			}
+		});
+//		BOTÃO SAIR
 		sairButton = new JButton("Sair");
-		sairButton.addActionListener(new EventoAction());
+		sairButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				
+			}
+		});
+//		ADICIONAR A TELA
 		add(getEntrarButton());
 		add(getSairButton());
 		setVisible(true);
@@ -28,13 +47,4 @@ public class TelaDeLoginView extends Controller.TelaController{
 		return entrarButton;
 	}
 	
-	public class EventoAction implements ActionListener{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if(e.getSource()== getSairButton()) {
-				setVisible(false);
-			}
-			
-		}}
 }
