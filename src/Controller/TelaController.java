@@ -36,4 +36,10 @@ public class TelaController extends JFrame{
 		add(passwordLabel);
 		add(passwordText);
 	}
+	public JTextField getLoginText() {
+		return loginText;
+	}
+	public JPasswordField getPasswordText() {
+		return passwordText;
+	}
 }
