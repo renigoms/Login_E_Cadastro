@@ -18,5 +18,4 @@ public class UsuarioModel {
 	public void setSenha(JPasswordField senha) {
 		this.senha = senha;
 	}
-	
 }
