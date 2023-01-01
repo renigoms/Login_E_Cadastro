@@ -31,19 +31,18 @@ public class TelaDeCadastroView extends Controller.TelaController{
 			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (getLoginText().getText().equals("") || 
-						getPasswordText().getText().equals("")) {
+				if (getLoginText().getText().equals("") || getPasswordText().getText().equals("")) {
 					new MensagemController();
 					MensagemController.exibirMensagemFalha();
-				}else {
-					UsuarioController usuario1 = new UsuarioController();
-					usuario1.getUsuario().setLogin(getLoginText());
-					usuario1.getUsuario().setSenha(getPasswordText());
-					new BDController().salvarUsuario(usuario1);
-					new MensagemController();
-					MensagemController.exibirMensagemSucesso();
-					setVisible(false);
 				}
+				UsuarioController usuario1 = new UsuarioController();
+				usuario1.getUsuario().setLogin(getLoginText());
+				usuario1.getUsuario().setSenha(getPasswordText());
+				new BDController().salvarUsuario(usuario1);
+				new MensagemController();
+				MensagemController.exibirMensagemSucesso();
+				setVisible(false);
+				
 				
 				
 				
