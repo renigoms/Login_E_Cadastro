@@ -4,10 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 import Controller.BDController;
+import Controller.MensagemController;
 import Controller.UsuarioController;
 
 @SuppressWarnings("serial")
@@ -31,12 +30,20 @@ public class TelaDeCadastroView extends Controller.TelaController{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				UsuarioModel usuario1 = new UsuarioModel();
-				UsuarioController usuario1 = new UsuarioController();
-				usuario1.getUsuario().setLogin(getLoginText());
-				usuario1.getUsuario().setSenha(getPasswordText());
-				new BDController().salvarUsuario(usuario1);
-				BDController.exibirInfo();
+				if (getLoginText().getText().equals("") || getPasswordText().getText().equals("")) {
+					new MensagemController();
+					MensagemController.exibirMensagemFalha();
+				}else {
+					UsuarioController usuario1 = new UsuarioController();
+					usuario1.getUsuario().setLogin(getLoginText());
+					usuario1.getUsuario().setSenha(getPasswordText());
+					new BDController().salvarUsuario(usuario1);
+					new MensagemController();
+					MensagemController.exibirMensagemSucesso();
+					setVisible(false);
+				}
+				
+				
 				
 				
 			}
