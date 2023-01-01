@@ -28,9 +28,11 @@ public class TelaDeCadastroView extends Controller.TelaController{
 		cadastrarButton = new JButton("Cadastrar");
 		cadastrarButton.addActionListener(new ActionListener() {
 			
+			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (getLoginText().getText().equals("") || getPasswordText().getText().equals("")) {
+				if (getLoginText().getText().equals("") || 
+						getPasswordText().getText().equals("")) {
 					new MensagemController();
 					MensagemController.exibirMensagemFalha();
 				}else {
