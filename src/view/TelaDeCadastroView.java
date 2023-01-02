@@ -33,7 +33,7 @@ public class TelaDeCadastroView extends Controller.TelaController{
 			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (getLoginText().getText().equals("") || getPasswordText().getText().equals("")) {
+				if (getLoginText().getText().equalsIgnoreCase("") || getPasswordText().getText().equalsIgnoreCase("")) {
 					new MensagensController();
 					MensagensController.exibirMensagemFalha();
 					
