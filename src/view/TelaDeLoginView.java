@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
+import Controller.MensagensController;
 
 @SuppressWarnings("serial")
 public class TelaDeLoginView extends Controller.TelaController{
@@ -19,9 +19,14 @@ public class TelaDeLoginView extends Controller.TelaController{
 		entrarButton = new JButton("Entrar");
 		entrarButton.addActionListener(new ActionListener() {
 			
+			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Entrou");
+				if(getLoginText().getText().equalsIgnoreCase("") || getPasswordText().getText().equalsIgnoreCase("")){
+					new MensagensController();
+					MensagensController.exibirMensagemFalha();
+					
+				}
 				
 			}
 		});
