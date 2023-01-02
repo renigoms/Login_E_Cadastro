@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import Controller.BDController;
+import Controller.MensagensController;
 import Controller.UsuarioController;
 
 @SuppressWarnings("serial")
@@ -30,10 +31,9 @@ public class TelaDeCadastroView extends Controller.TelaController{
 		
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Vamos ver o que deu com essa merda.");
-				System.out.println("E la vamos nois");
 				if (getLoginText().getText().equalsIgnoreCase("") || getPasswordText().getText().equalsIgnoreCase("")) {
-					System.out.println("Deu certo");
+					new MensagensController();
+					MensagensController.exibirMensagemFalha();
 					
 				}
 				UsuarioController usuario1 = new UsuarioController();
