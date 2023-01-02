@@ -30,6 +30,7 @@ public class TelaDeCadastroView extends Controller.TelaController{
 		cadastrarButton.addActionListener(new ActionListener() {
 			
 		
+			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (getLoginText().getText().equalsIgnoreCase("") || getPasswordText().getText().equalsIgnoreCase("")) {
