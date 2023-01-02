@@ -4,8 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 import Controller.BDController;
 import Controller.UsuarioController;
@@ -29,14 +27,18 @@ public class TelaDeCadastroView extends Controller.TelaController{
 		cadastrarButton = new JButton("Cadastrar");
 		cadastrarButton.addActionListener(new ActionListener() {
 			
+		
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				UsuarioModel usuario1 = new UsuarioModel();
+				System.out.println("Vamos ver o que deu com essa merda.");
 				UsuarioController usuario1 = new UsuarioController();
 				usuario1.getUsuario().setLogin(getLoginText());
 				usuario1.getUsuario().setSenha(getPasswordText());
 				new BDController().salvarUsuario(usuario1);
-				BDController.exibirInfo();
+				
+				
+				
+				
 				
 				
 			}
