@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import Controller.BDController;
 import Controller.MensagensController;
 import Controller.UsuarioController;
+import Model.MensagensModel;
 
 @SuppressWarnings("serial")
 public class TelaDeCadastroView extends Controller.TelaController{
@@ -40,6 +41,8 @@ public class TelaDeCadastroView extends Controller.TelaController{
 				usuario1.getUsuario().setLogin(getLoginText());
 				usuario1.getUsuario().setSenha(getPasswordText());
 				new BDController().salvarUsuario(usuario1);
+				new MensagensController();
+				MensagensController.exibirMensagemSucesso();
 				
 				
 				
