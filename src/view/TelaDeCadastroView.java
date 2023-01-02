@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import Controller.BDController;
 import Controller.MensagensController;
 import Controller.UsuarioController;
-import Model.MensagensModel;
 
 @SuppressWarnings("serial")
 public class TelaDeCadastroView extends Controller.TelaController{
