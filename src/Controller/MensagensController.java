@@ -14,9 +14,9 @@ public class MensagensController {
 		
 	}
 
-public static void exibirMensagemFalha() {
+	public static void exibirMensagemFalha() {
 	
-	JOptionPane.showMessageDialog(null, MensagensModel.getMensagemDeErro());
+		JOptionPane.showMessageDialog(null, MensagensModel.getMensagemDeErro());
 	
 }
 }
