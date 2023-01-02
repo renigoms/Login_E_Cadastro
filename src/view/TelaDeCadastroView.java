@@ -44,14 +44,7 @@ public class TelaDeCadastroView extends Controller.TelaController{
 					new MensagensController();
 					MensagensController.exibirMensagemSucesso();
 					setVisible(false);
-				}
-				
-				
-				
-				
-				
-				
-				
+				}					
 			}
 		});
 //		BOTÃO SAIR
