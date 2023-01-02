@@ -43,6 +43,7 @@ public class TelaDeCadastroView extends Controller.TelaController{
 				new BDController().salvarUsuario(usuario1);
 				new MensagensController();
 				MensagensController.exibirMensagemSucesso();
+				setVisible(false);
 				
 				
 				
