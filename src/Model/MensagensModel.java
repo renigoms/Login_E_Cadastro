@@ -1,16 +1,23 @@
 package Model;
 
 public class MensagensModel {
-	/*
-	 * ver se esta aqui o erro.
-	 */
-	private static final String MENSAGEM_DE_SUCESSO = "Operação bem sucedida.";
-	private static final String MENSAGEM_DE_ERRO = "Ocorreu um imprevisto.";
+	
+	private static final String MENSAGEM_DE_SUCESSO_AO_LOGAR = "Login efetuado com sucesso, Bem vindo "
+			+ "ao sistema.";
+	private static final String MENSAGEM_DE_SUCESSO = "Usuário cadastrado com sucesso.";
+	private static final String MENSAGEM_DE_ERRO = "Existem campos não preechidos.";
+private static final String MENSAGEM_DE_ERRO_DE_SENHALOGIN_INCORRETO = "Login ou Senha incorreta.";
 	
 	public static String getMensagemDeSucesso() {
 		return MENSAGEM_DE_SUCESSO;
 	}
 	public static String getMensagemDeErro() {
 		return MENSAGEM_DE_ERRO;
+	}
+	public static String getMensagemDeSucessoAoLogar() {
+		return MENSAGEM_DE_SUCESSO_AO_LOGAR;
+	}
+	public static String getMensagemDeErroDeSenhaloginIncorreto() {
+		return MENSAGEM_DE_ERRO_DE_SENHALOGIN_INCORRETO;
 	}
 }

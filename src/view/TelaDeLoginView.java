@@ -27,17 +27,16 @@ public class TelaDeLoginView extends Controller.TelaController{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(getLoginText().getText().equalsIgnoreCase("") || getPasswordText().getText().equalsIgnoreCase("")){
-					new MensagensView();
-					MensagensView.exibirMensagemFalha();	
+					MensagensView.exibirMensagemFalha();;	
 				}else {
 					usuario1 = new UsuarioController();
 					usuario1.getUsuario().setLogin(getLoginText());
 					usuario1.getUsuario().setSenha(getPasswordText());
 					new BDController();
 					if(BDController.buscarUsuario(usuario1)) {
-						MensagensView.exibirMensagemSucesso();
+						MensagensView.exibirMensagemAoLogar();;
 					}else {
-						MensagensView.exibirMensagemFalha();
+						MensagensView.exibirMensagemLoginSenhaIncorreto();;
 					}
 					
 					setVisible(false);
