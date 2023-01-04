@@ -9,7 +9,7 @@ public class BancoDeDadosArrayListModel {
 	private static ArrayList<UsuarioController> usuario;
 	
 	public static void criarBase() {
-		setUsuario(new ArrayList<>());
+		setUsuario(usuario = new ArrayList<>());
 	}
 
 	public static ArrayList<UsuarioController> getUsuario() {

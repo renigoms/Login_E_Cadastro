@@ -11,7 +11,8 @@ import Controller.UsuarioController;
 
 @SuppressWarnings("serial")
 public class TelaDeCadastroView extends Controller.TelaController{
-	JButton cadastrarButton, sairButton;
+	private JButton cadastrarButton, sairButton;
+	private UsuarioController usuario1;
 	public JButton getCadastrarButton() {
 		return cadastrarButton;
 	}
@@ -25,6 +26,7 @@ public class TelaDeCadastroView extends Controller.TelaController{
 	public TelaDeCadastroView() {
 		setTitle("Cadastrar");
 //		BOTÃO CADASTRAR
+		
 		cadastrarButton = new JButton("Cadastrar");
 		cadastrarButton.addActionListener(new ActionListener() {
 			
@@ -32,15 +34,16 @@ public class TelaDeCadastroView extends Controller.TelaController{
 			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				if (getLoginText().getText().equalsIgnoreCase("") || getPasswordText().getText().equalsIgnoreCase("")) {
 					new MensagensController();
 					MensagensController.exibirMensagemFalha();
 					
 				}else {
-					UsuarioController usuario1 = new UsuarioController();
+					usuario1 = new UsuarioController();
 					usuario1.getUsuario().setLogin(getLoginText());
 					usuario1.getUsuario().setSenha(getPasswordText());
-					new BDController().salvarUsuario(usuario1);
+					BDController.salvarUsuario(usuario1);
 					new MensagensController();
 					MensagensController.exibirMensagemSucesso();
 					setVisible(false);
@@ -61,6 +64,7 @@ public class TelaDeCadastroView extends Controller.TelaController{
 		add(getCadastrarButton());
 		add(getSairButton());
 		setVisible(true);
+		
 	}
 }
 

@@ -4,11 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+
+import Controller.BDController;
 import Controller.MensagensController;
+import Controller.UsuarioController;
+
 
 @SuppressWarnings("serial")
 public class TelaDeLoginView extends Controller.TelaController{
 	JButton entrarButton, sairButton;
+	UsuarioController usuario1;
 	/**
 	 * Tela de Login.
 	 * Filha da classe Tela.
@@ -24,8 +29,19 @@ public class TelaDeLoginView extends Controller.TelaController{
 			public void actionPerformed(ActionEvent e) {
 				if(getLoginText().getText().equalsIgnoreCase("") || getPasswordText().getText().equalsIgnoreCase("")){
 					new MensagensController();
-					MensagensController.exibirMensagemFalha();
+					MensagensController.exibirMensagemFalha();	
+				}else {
+					usuario1 = new UsuarioController();
+					usuario1.getUsuario().setLogin(getLoginText());
+					usuario1.getUsuario().setSenha(getPasswordText());
+					new BDController();
+					if(BDController.buscarUsuario(usuario1)) {
+						MensagensController.exibirMensagemSucesso();
+					}else {
+						MensagensController.exibirMensagemFalha();
+					}
 					
+					setVisible(false);
 				}
 				
 			}

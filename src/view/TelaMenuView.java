@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
+import Controller.BDController;
+
 
 @SuppressWarnings("serial")
 public class TelaMenuView extends Controller.TelaController {
@@ -17,6 +19,7 @@ public class TelaMenuView extends Controller.TelaController {
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		BDController.abrirBase();
 		
 		cadastrarButton = new JButton("Cadastrar");
 		cadastrarButton.setBounds(70, 30, 250, 70);
