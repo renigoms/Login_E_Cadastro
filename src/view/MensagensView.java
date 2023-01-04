@@ -1,10 +1,10 @@
-package Controller;
+package view;
 
 import javax.swing.JOptionPane;
 
 import Model.MensagensModel;
 
-public class MensagensController {
+public class MensagensView {
 	/*
 	 * Ver se o erro ta aqui
 	 */
