@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import Controller.BDController;
-import Controller.MensagensController;
 import Controller.UsuarioController;
 
 @SuppressWarnings("serial")
@@ -36,16 +35,16 @@ public class TelaDeCadastroView extends Controller.TelaController{
 			public void actionPerformed(ActionEvent e) {
 				
 				if (getLoginText().getText().equalsIgnoreCase("") || getPasswordText().getText().equalsIgnoreCase("")) {
-					new MensagensController();
-					MensagensController.exibirMensagemFalha();
+					new MensagensView();
+					MensagensView.exibirMensagemFalha();
 					
 				}else {
 					usuario1 = new UsuarioController();
 					usuario1.getUsuario().setLogin(getLoginText());
 					usuario1.getUsuario().setSenha(getPasswordText());
 					BDController.salvarUsuario(usuario1);
-					new MensagensController();
-					MensagensController.exibirMensagemSucesso();
+					new MensagensView();
+					MensagensView.exibirMensagemSucesso();
 					setVisible(false);
 				}					
 			}
