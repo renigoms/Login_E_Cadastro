@@ -6,6 +6,11 @@ import javax.swing.JTextField;
 public class UsuarioModel {
 	private JTextField login;
 	private JPasswordField senha;
+	
+	public UsuarioModel(JTextField login, JPasswordField senha) {
+		setLogin(login);
+		setSenha(senha);
+	}
 	public JTextField getLogin() {
 		return login;
 	}

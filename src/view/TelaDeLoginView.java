@@ -29,9 +29,7 @@ public class TelaDeLoginView extends Controller.TelaController{
 				if(getLoginText().getText().equalsIgnoreCase("") || getPasswordText().getText().equalsIgnoreCase("")){
 					MensagensView.exibirMensagemFalha();;	
 				}else {
-					usuario1 = new UsuarioController();
-					usuario1.getUsuario().setLogin(getLoginText());
-					usuario1.getUsuario().setSenha(getPasswordText());
+					usuario1 = new UsuarioController(getLoginText(), getPasswordText());
 					new BDController();
 					if(BDController.buscarUsuario(usuario1)) {
 						MensagensView.exibirMensagemAoLogar();;

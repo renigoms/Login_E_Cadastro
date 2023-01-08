@@ -39,9 +39,7 @@ public class TelaDeCadastroView extends Controller.TelaController{
 					MensagensView.exibirMensagemFalha();
 					
 				}else {
-					usuario1 = new UsuarioController();
-					usuario1.getUsuario().setLogin(getLoginText());
-					usuario1.getUsuario().setSenha(getPasswordText());
+					usuario1 = new UsuarioController(getLoginText(),getPasswordText());
 					BDController.salvarUsuario(usuario1);
 					new MensagensView();
 					MensagensView.exibirMensagemSucesso();
